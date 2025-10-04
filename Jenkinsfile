@@ -24,6 +24,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Test stage'
+                sh 'test -f build/index.html && echo "build/index.html exists" || echo "build/index.html does not exist"'
             }
         }
     }
