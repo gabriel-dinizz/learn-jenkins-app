@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        NETFLIFY_SITE_ID = 07ad1e56-f651-4817-82a7-3d2782f45d6c
+    }
+
     stages {
 
         stage('Run tests') {
@@ -69,7 +73,6 @@ pipeline {
                 }
             }
         }
-
         stage('Deploy') {
             agent {
                 docker {
